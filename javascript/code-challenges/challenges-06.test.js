@@ -25,7 +25,7 @@ Returns: ['dyoll', 'eimaj'];
 const getNames = (arr) => {
   // Solution code here...
 
-  
+  arr.map(({name}) => arr.push(arr.pop({name})));
   let newArray = arr.map((a) => a.name);
   return newArray.map((a) => a.split('').reverse().join(''));
 };
