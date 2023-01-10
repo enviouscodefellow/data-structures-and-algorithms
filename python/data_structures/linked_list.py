@@ -18,6 +18,41 @@ class LinkedList:
             current = current.next
         return False
 
+    def append(self, value):
+        new_node = Node(value)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def insert_before(self, value, new_value):
+        if not self.head:
+            raise TargetError("The list is empty.")
+        if self.head.value == value:
+            self.head = Node(new_value, self.head)
+            return
+        current = self.head
+        while current.next:
+            if current.next.value == value:
+                current.next = Node(new_value, current.next)
+                return
+            current = current.next
+        raise TargetError(f"Value {value} not found in the list.")
+
+    def insert_after(self, value, new_value):
+        if not self.head:
+            raise TargetError("The list is empty.")
+        current = self.head
+        while current:
+            if current.value == value:
+                current.next = Node(new_value, current.next)
+                return
+            current = current.next
+        raise TargetError(f"Value {value} not found in the list.")
+
     def __str__(self):
         current = self.head
         values = []
@@ -30,5 +65,5 @@ class LinkedList:
             return " -> ".join(values) + "NULL"
 
 
-class TargetError:
+class TargetError(Exception):
     pass
