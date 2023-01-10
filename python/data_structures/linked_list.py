@@ -53,6 +53,23 @@ class LinkedList:
             current = current.next
         raise TargetError(f"Value {value} not found in the list.")
 
+    def kth_from_end(self, k):
+        if not self.head:
+            return None
+        if k < 0:
+            raise TargetError(f"Input k: {k} should be greater than or equal to 0.")
+        current = self.head
+        length = 1
+        while current.next:
+            length += 1
+            current = current.next
+        if k >= length:
+            raise TargetError(f"Input k: {k} should be less than length of list: {length}.")
+        current = self.head
+        for _ in range(length - k - 1):
+            current = current.next
+        return current.value
+
     def __str__(self):
         current = self.head
         values = []
