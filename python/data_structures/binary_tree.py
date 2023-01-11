@@ -48,3 +48,19 @@ class BinaryTree:
             values.append(node.value)
         return values
 
+    def find_maximum_value(self):
+        if self.root is None:
+            raise InvalidOperationError("Tree is empty.")
+        return self._find_maximum_value(self.root)
+
+    def _find_maximum_value(self, node):
+        if node is None:
+            return float("-inf")
+
+        left_max = self._find_maximum_value(node.left)
+        right_max = self._find_maximum_value(node.right)
+        return max(node.value, left_max, right_max)
+
+
+class InvalidOperationError(Exception):
+    pass
