@@ -1,4 +1,4 @@
-# stack-queue-pseudo
+# stack-queue-animal-shelter
 Create a new class called pseudo queue.
 Do not use an existing Queue.
 Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),
@@ -14,7 +14,7 @@ NOTE: The Stack instances have only push, pop, and peek methods. You should use 
 
 ## Challenge
 
-Implement a Queue using two Stacks.
+First-in, First out Animal Shelter.
 
 ## Whiteboard Process
 ![white board](WhiteBoard2.png)
