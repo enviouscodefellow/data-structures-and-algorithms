@@ -1,4 +1,4 @@
-# stack-queue-animal-shelter
+# stack-queue-brackets
 Write a function called validate brackets
 Arguments: string
 Return: boolean
