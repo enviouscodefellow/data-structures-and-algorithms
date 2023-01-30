@@ -69,6 +69,16 @@ class LinkedList:
         for _ in range(length - k - 1):
             current = current.next
         return current.value
+    
+    def findMiddle(self):
+        slow = self.head
+        fast = self.head
+
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow.val
 
     def __str__(self):
         current = self.head
@@ -80,7 +90,6 @@ class LinkedList:
             return " -> ".join(values) + " -> NULL"
         else:
             return " -> ".join(values) + "NULL"
-
 
 class TargetError(Exception):
     pass
