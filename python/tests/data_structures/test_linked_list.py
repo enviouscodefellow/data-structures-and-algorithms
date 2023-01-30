@@ -1,5 +1,5 @@
 import pytest
-from data_structures.linked_list import LinkedList
+from data_structures.linked_list import LinkedList, Node
 
 
 def test_exists():
@@ -73,3 +73,39 @@ def test_includes_false():
     linked_list.insert("banana")
 
     assert not linked_list.includes("cucumber")
+
+@pytest.mark.skip("TODO")
+def test_findMiddle_odd_nodes():
+    # Test case 1: Odd number of nodes
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(4)
+    ll.insert(5)
+    assert ll.findMiddle() == 3
+
+@pytest.mark.skip("TODO")
+def test_findMiddle_even_nodes():
+    # Test case 2: Even number of nodes
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(4)
+    assert ll.findMiddle() == 2
+
+@pytest.mark.skip("TODO")
+def test_findMiddle_one_node():
+    # Test case 3: List with only one node
+    ll = LinkedList()
+    ll.insert(1)
+    assert ll.findMiddle() == 1
+
+@pytest.mark.skip("TODO")
+def test_findMiddle_no_node():
+    # Test case 4: List with no nodes
+    ll = LinkedList()
+    ll.insert(None)
+    assert ll.findMiddle() == None
+
