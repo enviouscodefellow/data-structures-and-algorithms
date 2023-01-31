@@ -37,3 +37,21 @@ class Hashtable:
 
     def hash(self, key):
         return hash(key) % self.size
+
+    def display(self):
+        return self._buckets
+
+
+hashtable = Hashtable(1024)
+hashtable.set("ahmad", 30)
+hashtable.set("silent", True)
+hashtable.set("listen", "to me")
+
+actual = []
+
+# NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
+for item in hashtable._buckets:
+    if item:
+        actual.append(item)
+
+print(actual)
